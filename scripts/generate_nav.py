@@ -21,14 +21,17 @@ def scan_dir(path):
                     "name": entry.name,
                     "children": children
                 })
-        elif entry.name.lower().endswith('.md'):
-            rel_path = os.path.relpath(entry.path, '.').replace('\\', '/')
-            display_name = entry.name[:-3]
-            items.append({
-                "type": "file",
-                "name": display_name,
-                "path": rel_path
-            })
+        else:
+            ext = os.path.splitext(entry.name.lower())[1]
+            supported = {'.md', '.html', '.htm', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp'}
+            if ext in supported:
+                rel_path = os.path.relpath(entry.path, '.').replace('\\', '/')
+                display_name = os.path.splitext(entry.name)[0] if ext == '.md' else entry.name
+                items.append({
+                    "type": "file",
+                    "name": display_name,
+                    "path": rel_path
+                })
     return items
 
 nav = {"items": scan_dir('docs')}
