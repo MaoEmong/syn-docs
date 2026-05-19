@@ -608,6 +608,17 @@
       ]
     },
     {
+      "type": "folder",
+      "name": "이미지",
+      "children": [
+        {
+          "type": "file",
+          "name": "찢어진 제미나이.png",
+          "path": "docs/이미지/찢어진 제미나이.png"
+        }
+      ]
+    },
+    {
       "type": "file",
       "name": "README",
       "path": "docs/README.md"
