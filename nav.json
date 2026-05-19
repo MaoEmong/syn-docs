@@ -592,6 +592,517 @@
       ]
     },
     {
+      "type": "folder",
+      "name": "김해준",
+      "children": [
+        {
+          "type": "folder",
+          "name": "ai",
+          "children": [
+            {
+              "type": "folder",
+              "name": "agent",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "AGENTS",
+                  "path": "docs/김해준/ai/agent/AGENTS.md"
+                },
+                {
+                  "type": "file",
+                  "name": "CLAUDE",
+                  "path": "docs/김해준/ai/agent/CLAUDE.md"
+                },
+                {
+                  "type": "file",
+                  "name": "director",
+                  "path": "docs/김해준/ai/agent/director.md"
+                },
+                {
+                  "type": "file",
+                  "name": "GEMINI",
+                  "path": "docs/김해준/ai/agent/GEMINI.md"
+                },
+                {
+                  "type": "file",
+                  "name": "researcher",
+                  "path": "docs/김해준/ai/agent/researcher.md"
+                },
+                {
+                  "type": "file",
+                  "name": "worker",
+                  "path": "docs/김해준/ai/agent/worker.md"
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "name": "archive",
+              "children": [
+                {
+                  "type": "folder",
+                  "name": "20260514-step2",
+                  "children": [
+                    {
+                      "type": "file",
+                      "name": "CONTEXT",
+                      "path": "docs/김해준/ai/archive/20260514-step2/CONTEXT.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "HANDOFF",
+                      "path": "docs/김해준/ai/archive/20260514-step2/HANDOFF.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "PLAN",
+                      "path": "docs/김해준/ai/archive/20260514-step2/PLAN.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "PLAN2",
+                      "path": "docs/김해준/ai/archive/20260514-step2/PLAN2.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "TASK",
+                      "path": "docs/김해준/ai/archive/20260514-step2/TASK.md"
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "name": "20260514-step3-jwt-mfa",
+                  "children": [
+                    {
+                      "type": "file",
+                      "name": "CONTEXT",
+                      "path": "docs/김해준/ai/archive/20260514-step3-jwt-mfa/CONTEXT.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "HANDOFF",
+                      "path": "docs/김해준/ai/archive/20260514-step3-jwt-mfa/HANDOFF.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "PLAN",
+                      "path": "docs/김해준/ai/archive/20260514-step3-jwt-mfa/PLAN.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "TASK",
+                      "path": "docs/김해준/ai/archive/20260514-step3-jwt-mfa/TASK.md"
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "name": "20260515-w1-correction",
+                  "children": [
+                    {
+                      "type": "file",
+                      "name": "CONTEXT",
+                      "path": "docs/김해준/ai/archive/20260515-w1-correction/CONTEXT.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "HANDOFF",
+                      "path": "docs/김해준/ai/archive/20260515-w1-correction/HANDOFF.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "PLAN",
+                      "path": "docs/김해준/ai/archive/20260515-w1-correction/PLAN.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "TASK",
+                      "path": "docs/김해준/ai/archive/20260515-w1-correction/TASK.md"
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "name": "20260518-multi-module-migration",
+                  "children": [
+                    {
+                      "type": "file",
+                      "name": "CONTEXT",
+                      "path": "docs/김해준/ai/archive/20260518-multi-module-migration/CONTEXT.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "HANDOFF",
+                      "path": "docs/김해준/ai/archive/20260518-multi-module-migration/HANDOFF.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "TASK",
+                      "path": "docs/김해준/ai/archive/20260518-multi-module-migration/TASK.md"
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "name": "20260518-step1-review",
+                  "children": [
+                    {
+                      "type": "file",
+                      "name": "CONTEXT",
+                      "path": "docs/김해준/ai/archive/20260518-step1-review/CONTEXT.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "HANDOFF",
+                      "path": "docs/김해준/ai/archive/20260518-step1-review/HANDOFF.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "TASK",
+                      "path": "docs/김해준/ai/archive/20260518-step1-review/TASK.md"
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "name": "20260518-step2-review",
+                  "children": [
+                    {
+                      "type": "file",
+                      "name": "CONTEXT",
+                      "path": "docs/김해준/ai/archive/20260518-step2-review/CONTEXT.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "HANDOFF",
+                      "path": "docs/김해준/ai/archive/20260518-step2-review/HANDOFF.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "TASK",
+                      "path": "docs/김해준/ai/archive/20260518-step2-review/TASK.md"
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "name": "20260519-arch-migration-v2",
+                  "children": [
+                    {
+                      "type": "file",
+                      "name": "CONTEXT",
+                      "path": "docs/김해준/ai/archive/20260519-arch-migration-v2/CONTEXT.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "HANDOFF",
+                      "path": "docs/김해준/ai/archive/20260519-arch-migration-v2/HANDOFF.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "IMPLEMENTATION_PLAN",
+                      "path": "docs/김해준/ai/archive/20260519-arch-migration-v2/IMPLEMENTATION_PLAN.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "TASK",
+                      "path": "docs/김해준/ai/archive/20260519-arch-migration-v2/TASK.md"
+                    }
+                  ]
+                },
+                {
+                  "type": "folder",
+                  "name": "20260519-multi-module-migration",
+                  "children": [
+                    {
+                      "type": "file",
+                      "name": "CONTEXT",
+                      "path": "docs/김해준/ai/archive/20260519-multi-module-migration/CONTEXT.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "HANDOFF",
+                      "path": "docs/김해준/ai/archive/20260519-multi-module-migration/HANDOFF.md"
+                    },
+                    {
+                      "type": "file",
+                      "name": "TASK",
+                      "path": "docs/김해준/ai/archive/20260519-multi-module-migration/TASK.md"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "name": "current",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "CONTEXT",
+                  "path": "docs/김해준/ai/current/CONTEXT.md"
+                },
+                {
+                  "type": "file",
+                  "name": "HANDOFF",
+                  "path": "docs/김해준/ai/current/HANDOFF.md"
+                },
+                {
+                  "type": "file",
+                  "name": "IMPLEMENTATION_PLAN",
+                  "path": "docs/김해준/ai/current/IMPLEMENTATION_PLAN.md"
+                },
+                {
+                  "type": "file",
+                  "name": "TASK",
+                  "path": "docs/김해준/ai/current/TASK.md"
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "name": "decisions",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "DECISION_LOG",
+                  "path": "docs/김해준/ai/decisions/DECISION_LOG.md"
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "name": "templates",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "CONTEXT",
+                  "path": "docs/김해준/ai/templates/CONTEXT.md"
+                },
+                {
+                  "type": "file",
+                  "name": "HANDOFF",
+                  "path": "docs/김해준/ai/templates/HANDOFF.md"
+                },
+                {
+                  "type": "file",
+                  "name": "TASK",
+                  "path": "docs/김해준/ai/templates/TASK.md"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "project-management",
+          "children": [
+            {
+              "type": "folder",
+              "name": "history",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "HISTORY_platform",
+                  "path": "docs/김해준/project-management/history/HISTORY_platform.md"
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "name": "prd",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "PRD_W1",
+                  "path": "docs/김해준/project-management/prd/PRD_W1.md"
+                },
+                {
+                  "type": "file",
+                  "name": "PRD_W2",
+                  "path": "docs/김해준/project-management/prd/PRD_W2.md"
+                },
+                {
+                  "type": "file",
+                  "name": "PRD_W3",
+                  "path": "docs/김해준/project-management/prd/PRD_W3.md"
+                },
+                {
+                  "type": "file",
+                  "name": "PRD_W4",
+                  "path": "docs/김해준/project-management/prd/PRD_W4.md"
+                },
+                {
+                  "type": "file",
+                  "name": "PRD_W5",
+                  "path": "docs/김해준/project-management/prd/PRD_W5.md"
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "name": "scope",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "SCOPE_platform",
+                  "path": "docs/김해준/project-management/scope/SCOPE_platform.md"
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "name": "task",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "TASK_platform",
+                  "path": "docs/김해준/project-management/task/TASK_platform.md"
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "name": "workflow",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "WORKFLOW_platform_W1",
+                  "path": "docs/김해준/project-management/workflow/WORKFLOW_platform_W1.md"
+                },
+                {
+                  "type": "file",
+                  "name": "WORKFLOW_platform_W2",
+                  "path": "docs/김해준/project-management/workflow/WORKFLOW_platform_W2.md"
+                },
+                {
+                  "type": "file",
+                  "name": "WORKFLOW_platform_W3",
+                  "path": "docs/김해준/project-management/workflow/WORKFLOW_platform_W3.md"
+                },
+                {
+                  "type": "file",
+                  "name": "WORKFLOW_platform_W4",
+                  "path": "docs/김해준/project-management/workflow/WORKFLOW_platform_W4.md"
+                },
+                {
+                  "type": "file",
+                  "name": "WORKFLOW_platform_W5",
+                  "path": "docs/김해준/project-management/workflow/WORKFLOW_platform_W5.md"
+                }
+              ]
+            },
+            {
+              "type": "file",
+              "name": "KICKOFF",
+              "path": "docs/김해준/project-management/KICKOFF.md"
+            },
+            {
+              "type": "file",
+              "name": "README",
+              "path": "docs/김해준/project-management/README.md"
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "spike",
+          "children": [
+            {
+              "type": "folder",
+              "name": "billing",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "HANDOFF_MAIN",
+                  "path": "docs/김해준/spike/billing/HANDOFF_MAIN.md"
+                },
+                {
+                  "type": "file",
+                  "name": "SAMPLING_STEP4_STRIPE",
+                  "path": "docs/김해준/spike/billing/SAMPLING_STEP4_STRIPE.md"
+                },
+                {
+                  "type": "file",
+                  "name": "STRIPE_RESEARCH_SUMMARY",
+                  "path": "docs/김해준/spike/billing/STRIPE_RESEARCH_SUMMARY.md"
+                },
+                {
+                  "type": "file",
+                  "name": "STRIPE_RESEARCH_SUMMARY_2",
+                  "path": "docs/김해준/spike/billing/STRIPE_RESEARCH_SUMMARY_2.md"
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "name": "OAuth",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "OAUTH_SUMMARY",
+                  "path": "docs/김해준/spike/OAuth/OAUTH_SUMMARY.md"
+                },
+                {
+                  "type": "file",
+                  "name": "SAMPLING_OAUTH",
+                  "path": "docs/김해준/spike/OAuth/SAMPLING_OAUTH.md"
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "name": "step2-oauth-supplement",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "SAMPLING_STEP2_ADDITIONAL",
+                  "path": "docs/김해준/spike/step2-oauth-supplement/SAMPLING_STEP2_ADDITIONAL.md"
+                },
+                {
+                  "type": "file",
+                  "name": "STEP2_ADDITIONAL_SUMMARY",
+                  "path": "docs/김해준/spike/step2-oauth-supplement/STEP2_ADDITIONAL_SUMMARY.md"
+                },
+                {
+                  "type": "file",
+                  "name": "TECH_CONCEPTS",
+                  "path": "docs/김해준/spike/step2-oauth-supplement/TECH_CONCEPTS.md"
+                }
+              ]
+            },
+            {
+              "type": "folder",
+              "name": "step3-jwt-mfa",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "SAMPLING_STEP3_JWT_MFA",
+                  "path": "docs/김해준/spike/step3-jwt-mfa/SAMPLING_STEP3_JWT_MFA.md"
+                },
+                {
+                  "type": "file",
+                  "name": "SAMPLING_STEP3_RESULT",
+                  "path": "docs/김해준/spike/step3-jwt-mfa/SAMPLING_STEP3_RESULT.md"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "name": "synapse-platform-svc_ARCHITECTURE",
+          "path": "docs/김해준/synapse-platform-svc_ARCHITECTURE.md"
+        },
+        {
+          "type": "file",
+          "name": "synapse-platform-svc_ARCHITECTURE_v2",
+          "path": "docs/김해준/synapse-platform-svc_ARCHITECTURE_v2.md"
+        }
+      ]
+    },
+    {
       "type": "file",
       "name": "README",
       "path": "docs/README.md"
