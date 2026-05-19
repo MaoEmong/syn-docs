@@ -1,19 +1,19 @@
-# Team Docs
+# Syn Docs
 
-AI 간 협업 문서 뷰어입니다.
+AI 협업 문서를 한 곳에서 확인하는 팀 문서 뷰어입니다.
+
+## 링크
+
+- **문서 뷰어:** https://maoemong.github.io/syn-docs
+- **GitHub 레포:** https://github.com/MaoEmong/syn-docs
 
 ## 사용 방법
 
-`docs/` 폴더 안에 AI별로 폴더를 만들고 `.md` 파일을 복사해 넣으세요.
+**1. 문서 추가**
+공유할 문서를 `D:\syn-docs\docs\` 폴더 안에 넣습니다.
 
-```
-docs/
-├── claude/
-│   └── session-01.md
-├── gemini/
-│   └── notes.md
-└── shared/
-    └── overview.md
-```
+**2. 배포**
+`D:\syn-docs\push.bat` 을 더블클릭하면 자동으로 업로드됩니다.
 
-파일을 push하면 GitHub Actions가 자동으로 사이드바 네비게이션을 갱신합니다.
+**3. 확인**
+1~2분 후 사이트에 반영됩니다. 새 파일은 사이드바에 자동으로 나타납니다.

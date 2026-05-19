@@ -450,7 +450,7 @@
     const route = () => {
       const hash = decodeURIComponent(location.hash.slice(1));
       if (hash) loadFile(hash);
-      else showWelcome();
+      else loadFile('docs/README.md');
     };
 
     window.addEventListener('hashchange', route);
