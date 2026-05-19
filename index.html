@@ -352,14 +352,14 @@
         const label = document.createElement('div');
         label.className = 'nav-section-label';
         label.innerHTML = `
-          <svg class="chevron open" viewBox="0 0 10 10" fill="none">
+          <svg class="chevron" viewBox="0 0 10 10" fill="none">
             <path d="M3 2l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
           ${item.name}
         `;
 
         const children = document.createElement('div');
-        children.className = 'nav-children';
+        children.className = 'nav-children collapsed';
         buildNav(item.children, children);
 
         label.addEventListener('click', () => {
