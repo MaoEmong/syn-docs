@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syn Docs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked@9/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --sidebar-w: 256px;
+      --header-h: 48px;
+      --bg: #ffffff;
+      --sidebar-bg: #f7f7f8;
+      --border: #e5e7eb;
+      --text: #111827;
+      --text-muted: #6b7280;
+      --accent: #4f46e5;
+      --hover: #ebebed;
+      --active-bg: #e0e0e3;
+      --code-bg: #f6f8fa;
+      --radius: 6px;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', sans-serif;
+      --mono: 'SF Mono', 'Consolas', 'Menlo', monospace;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── Header ── */
+    #header {
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 22px;
+      height: 22px;
+      background: var(--accent);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-mark svg { width: 12px; height: 12px; fill: #fff; }
+
+    .logo-text {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      color: var(--text);
+    }
+
+    #breadcrumb {
+      margin-left: auto;
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #breadcrumb span + span::before {
+      content: '/';
+      margin-right: 6px;
+      opacity: 0.4;
+    }
+
+    /* ── Layout ── */
+    #layout {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── Sidebar ── */
+    #sidebar {
+      width: var(--sidebar-w);
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      flex-shrink: 0;
+    }
+
+    #nav-tree {
+      padding: 10px 8px;
+    }
+
+    .nav-section-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 8px 4px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      cursor: pointer;
+      border-radius: var(--radius);
+      user-select: none;
+    }
+
+    .nav-section-label:hover { background: var(--hover); color: var(--text); }
+
+    .chevron {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      opacity: 0.5;
+      transition: transform 0.15s ease;
+      flex-shrink: 0;
+    }
+
+    .chevron.open { transform: rotate(90deg); }
+
+    .nav-children { margin-left: 10px; }
+    .nav-children.collapsed { display: none; }
+
+    .nav-file {
+      display: block;
+      padding: 5px 10px;
+      border-radius: var(--radius);
+      font-size: 13.5px;
+      color: var(--text-muted);
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 1px;
+      transition: background 0.1s, color 0.1s;
+    }
+
+    .nav-file:hover { background: var(--hover); color: var(--text); }
+    .nav-file.active { background: var(--active-bg); color: var(--text); font-weight: 500; }
+
+    /* ── Content ── */
+    #content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 44px 56px;
+    }
+
+    #md-content {
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    /* ── Markdown styles ── */
+    #md-content h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    #md-content h2 {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      margin: 36px 0 12px;
+    }
+
+    #md-content h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 24px 0 8px;
+    }
+
+    #md-content h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 20px 0 6px;
+      color: var(--text-muted);
+    }
+
+    #md-content p {
+      font-size: 14.5px;
+      line-height: 1.78;
+      color: #374151;
+      margin-bottom: 14px;
+    }
+
+    #md-content ul, #md-content ol {
+      margin: 0 0 14px 22px;
+    }
+
+    #md-content li {
+      font-size: 14.5px;
+      line-height: 1.78;
+      color: #374151;
+      margin-bottom: 3px;
+    }
+
+    #md-content a { color: var(--accent); text-decoration: none; }
+    #md-content a:hover { text-decoration: underline; }
+
+    #md-content strong { font-weight: 600; color: var(--text); }
+
+    #md-content code {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      background: var(--code-bg);
+      border: 1px solid #e1e4e8;
+      padding: 1px 5px;
+      border-radius: 4px;
+      color: #d6336c;
+    }
+
+    #md-content pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      overflow-x: auto;
+      margin-bottom: 16px;
+    }
+
+    #md-content pre code {
+      background: none;
+      border: none;
+      padding: 0;
+      color: inherit;
+      font-size: 13px;
+    }
+
+    #md-content blockquote {
+      border-left: 3px solid #d1d5db;
+      padding: 6px 16px;
+      margin: 0 0 14px;
+      color: var(--text-muted);
+    }
+
+    #md-content blockquote p { color: var(--text-muted); margin-bottom: 0; }
+
+    #md-content table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+      font-size: 13.5px;
+    }
+
+    #md-content th {
+      background: var(--code-bg);
+      padding: 8px 12px;
+      text-align: left;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      font-size: 12.5px;
+    }
+
+    #md-content td {
+      padding: 7px 12px;
+      border: 1px solid var(--border);
+    }
+
+    #md-content tr:nth-child(even) td { background: #fafafa; }
+
+    #md-content hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0;
+    }
+
+    #md-content img {
+      max-width: 100%;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+
+    /* ── Empty / Welcome state ── */
+    .welcome {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      gap: 10px;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .welcome-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--sidebar-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+
+    .welcome-icon svg { width: 22px; height: 22px; opacity: 0.4; }
+
+    .welcome h2 { font-size: 16px; font-weight: 500; color: var(--text); }
+    .welcome p { font-size: 13.5px; }
+  </style>
+</head>
+<body>
+
+<div id="header">
+  <div class="logo-mark">
+    <svg viewBox="0 0 12 12"><path d="M2 2h3v3H2zM7 2h3v3H7zM2 7h3v3H2zM7 7h3v3H7z"/></svg>
+  </div>
+  <span class="logo-text">Syn Docs</span>
+  <div id="breadcrumb"></div>
+</div>
+
+<div id="layout">
+  <aside id="sidebar">
+    <nav id="nav-tree"></nav>
+  </aside>
+  <main id="content">
+    <div id="md-content"></div>
+  </main>
+</div>
+
+<script>
+  marked.use({ breaks: true, gfm: true });
+
+  function buildNav(items, container) {
+    items.forEach(item => {
+      if (item.type === 'folder') {
+        const wrapper = document.createElement('div');
+
+        const label = document.createElement('div');
+        label.className = 'nav-section-label';
+        label.innerHTML = `
+          <svg class="chevron open" viewBox="0 0 10 10" fill="none">
+            <path d="M3 2l4 3-4 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          ${item.name}
+        `;
+
+        const children = document.createElement('div');
+        children.className = 'nav-children';
+        buildNav(item.children, children);
+
+        label.addEventListener('click', () => {
+          const chevron = label.querySelector('.chevron');
+          chevron.classList.toggle('open');
+          children.classList.toggle('collapsed');
+        });
+
+        wrapper.appendChild(label);
+        wrapper.appendChild(children);
+        container.appendChild(wrapper);
+      } else {
+        const a = document.createElement('a');
+        a.className = 'nav-file';
+        a.textContent = item.name;
+        a.href = '#' + item.path;
+        container.appendChild(a);
+      }
+    });
+  }
+
+  function setActive(path) {
+    document.querySelectorAll('.nav-file').forEach(el => {
+      el.classList.toggle('active', el.getAttribute('href') === '#' + path);
+    });
+  }
+
+  function setBreadcrumb(path) {
+    const bc = document.getElementById('breadcrumb');
+    if (!path) { bc.innerHTML = ''; return; }
+    const parts = path.replace(/^docs\//, '').replace(/\.md$/, '').split('/');
+    bc.innerHTML = parts.map(p => `<span>${p}</span>`).join('');
+  }
+
+  async function loadFile(path) {
+    setActive(path);
+    setBreadcrumb(path);
+    let res, text;
+    try {
+      res = await fetch(path);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      text = await res.text();
+    } catch (e) {
+      document.getElementById('md-content').innerHTML = `
+        <div class="welcome">
+          <div class="welcome-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414A1 1 0 0119 9.414V19a2 2 0 01-2 2z"/></svg></div>
+          <h2>문서를 불러올 수 없습니다</h2>
+          <p>${path}</p>
+          <p style="font-size:12px;color:#9ca3af;margin-top:4px">${e.message}</p>
+        </div>`;
+      return;
+    }
+    try {
+      document.getElementById('md-content').innerHTML = marked.parse(text);
+      document.querySelectorAll('pre code').forEach(el => hljs.highlightElement(el));
+    } catch (e) {
+      document.getElementById('md-content').innerHTML = `
+        <div class="welcome">
+          <div class="welcome-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414A1 1 0 0119 9.414V19a2 2 0 01-2 2z"/></svg></div>
+          <h2>렌더링 오류</h2>
+          <p>${path}</p>
+          <p style="font-size:12px;color:#9ca3af;margin-top:4px">${e.message}</p>
+        </div>`;
+      return;
+    }
+    document.getElementById('content').scrollTop = 0;
+  }
+
+  function showWelcome() {
+    setActive(null);
+    setBreadcrumb(null);
+    document.getElementById('md-content').innerHTML = `
+      <div class="welcome">
+        <div class="welcome-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg></div>
+        <h2>문서를 선택하세요</h2>
+        <p>왼쪽 사이드바에서 파일을 클릭하면 여기에 표시됩니다</p>
+      </div>`;
+  }
+
+  async function init() {
+    let navData = { items: [] };
+    try {
+      const res = await fetch('nav.json');
+      navData = await res.json();
+    } catch {}
+
+    const tree = document.getElementById('nav-tree');
+    buildNav(navData.items, tree);
+
+    const route = () => {
+      const hash = decodeURIComponent(location.hash.slice(1));
+      if (hash) loadFile(hash);
+      else showWelcome();
+    };
+
+    window.addEventListener('hashchange', route);
+    route();
+  }
+
+  init();
+</script>
+</body>
+</html>
