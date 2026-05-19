@@ -465,8 +465,9 @@
           <span style="font-size:12px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.6px">사용 방법</span>
           <div style="display:flex;flex-direction:column;gap:8px">
             ${[
-              ['문서 추가', '공유할 문서를 <code style="font-family:var(--mono);font-size:12px;background:#ebebed;padding:1px 5px;border-radius:4px">D:\\syn-docs\\docs\\</code> 폴더 안에 넣습니다.'],
-              ['배포', '<code style="font-family:var(--mono);font-size:12px;background:#ebebed;padding:1px 5px;border-radius:4px">D:\\syn-docs\\push.bat</code> 을 더블클릭하면 자동으로 업로드됩니다.'],
+              ['레포 클론', '터미널에서 <code style="font-family:var(--mono);font-size:12px;background:#ebebed;padding:1px 5px;border-radius:4px">git clone https://github.com/MaoEmong/syn-docs.git</code> 을 실행합니다. ZIP 다운로드는 git과 연결되지 않으니 반드시 clone을 사용하세요.'],
+              ['문서 추가', '공유할 문서를 클론한 폴더 안의 <code style="font-family:var(--mono);font-size:12px;background:#ebebed;padding:1px 5px;border-radius:4px">docs/</code> 폴더에 넣습니다.'],
+              ['배포', '클론한 폴더 안의 <code style="font-family:var(--mono);font-size:12px;background:#ebebed;padding:1px 5px;border-radius:4px">push.bat</code> 을 더블클릭하면 자동으로 업로드됩니다.'],
               ['확인', '1~2분 후 사이트에 반영됩니다. 새 파일은 사이드바에 자동으로 나타납니다.']
             ].map(([title, desc], i) => `
               <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px">
