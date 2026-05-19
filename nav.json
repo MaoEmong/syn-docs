@@ -10,8 +10,23 @@
           "children": [
             {
               "type": "file",
+              "name": "AGENTS",
+              "path": "docs/ai/agent/AGENTS.md"
+            },
+            {
+              "type": "file",
+              "name": "CLAUDE",
+              "path": "docs/ai/agent/CLAUDE.md"
+            },
+            {
+              "type": "file",
               "name": "director",
               "path": "docs/ai/agent/director.md"
+            },
+            {
+              "type": "file",
+              "name": "GEMINI",
+              "path": "docs/ai/agent/GEMINI.md"
             },
             {
               "type": "file",
