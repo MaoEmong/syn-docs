@@ -430,10 +430,54 @@
     setActive(null);
     setBreadcrumb(null);
     document.getElementById('md-content').innerHTML = `
-      <div class="welcome">
-        <div class="welcome-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg></div>
-        <h2>문서를 선택하세요</h2>
-        <p>왼쪽 사이드바에서 파일을 클릭하면 여기에 표시됩니다</p>
+      <div style="display:flex;flex-direction:column;gap:28px;max-width:520px;padding:8px 0">
+
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:36px;height:36px;background:#4f46e5;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+              <svg width="18" height="18" viewBox="0 0 12 12" fill="#fff"><path d="M2 2h3v3H2zM7 2h3v3H7zM2 7h3v3H2zM7 7h3v3H7z"/></svg>
+            </div>
+            <span style="font-size:22px;font-weight:700;letter-spacing:-0.5px">Syn Docs</span>
+          </div>
+          <p style="font-size:14px;color:#6b7280;line-height:1.6">AI 협업 문서를 한 곳에서 확인하는 팀 문서 뷰어입니다.</p>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <a href="https://maoemong.github.io/syn-docs" target="_blank" style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#4f46e5;border-radius:10px;text-decoration:none;gap:12px">
+            <div style="display:flex;flex-direction:column;gap:3px">
+              <span style="font-size:12px;font-weight:500;color:rgba(255,255,255,0.7)">문서 뷰어 바로가기</span>
+              <span style="font-size:15px;font-weight:600;color:#fff;font-family:var(--mono)">maoemong.github.io/syn-docs</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <a href="https://github.com/MaoEmong/syn-docs" target="_blank" style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;text-decoration:none;gap:12px">
+            <div style="display:flex;flex-direction:column;gap:3px">
+              <span style="font-size:12px;font-weight:500;color:#6b7280">GitHub 레포지토리</span>
+              <span style="font-size:15px;font-weight:600;color:#111827;font-family:var(--mono)">github.com/MaoEmong/syn-docs</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <span style="font-size:12px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.6px">사용 방법</span>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            ${[
+              ['문서 추가', '공유할 문서를 <code style="font-family:var(--mono);font-size:12px;background:#ebebed;padding:1px 5px;border-radius:4px">D:\\syn-docs\\docs\\</code> 폴더 안에 넣습니다.'],
+              ['배포', '<code style="font-family:var(--mono);font-size:12px;background:#ebebed;padding:1px 5px;border-radius:4px">D:\\syn-docs\\push.bat</code> 을 더블클릭하면 자동으로 업로드됩니다.'],
+              ['확인', '1~2분 후 사이트에 반영됩니다. 새 파일은 사이드바에 자동으로 나타납니다.']
+            ].map(([title, desc], i) => `
+              <div style="display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px">
+                <div style="width:22px;height:22px;background:#4f46e5;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;margin-top:1px">${i+1}</div>
+                <div style="display:flex;flex-direction:column;gap:3px">
+                  <span style="font-size:13.5px;font-weight:600;color:#111827">${title}</span>
+                  <span style="font-size:12.5px;color:#6b7280;line-height:1.6">${desc}</span>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
       </div>`;
   }
 
@@ -450,7 +494,7 @@
     const route = () => {
       const hash = decodeURIComponent(location.hash.slice(1));
       if (hash) loadFile(hash);
-      else loadFile('docs/README.md');
+      else showWelcome();
     };
 
     window.addEventListener('hashchange', route);
