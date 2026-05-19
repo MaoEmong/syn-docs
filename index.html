@@ -323,10 +323,12 @@
 <body>
 
 <div id="header">
-  <div class="logo-mark">
-    <svg viewBox="0 0 12 12"><path d="M2 2h3v3H2zM7 2h3v3H7zM2 7h3v3H2zM7 7h3v3H7z"/></svg>
+  <div style="display:flex;align-items:center;gap:10px;cursor:pointer" onclick="location.hash='';showWelcome()">
+    <div class="logo-mark">
+      <svg viewBox="0 0 12 12"><path d="M2 2h3v3H2zM7 2h3v3H7zM2 7h3v3H2zM7 7h3v3H7z"/></svg>
+    </div>
+    <span class="logo-text">Syn Docs</span>
   </div>
-  <span class="logo-text">Syn Docs</span>
   <div id="breadcrumb"></div>
 </div>
 
